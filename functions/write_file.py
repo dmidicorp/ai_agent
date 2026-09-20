@@ -1,6 +1,30 @@
 import os
 
 
+schema_write_file = {
+        "type": "function",
+        "function": {
+            "name": "write_file",
+            "description": "Writes content into a specified file, or overwrites file content, relative to the working directory, and also creates any missing parent directories",
+            "parameters": {
+                "required": ["file_path", "content"], 
+                "type": "object",
+                "properties": {
+                    "file_path": {
+                        "type": "string",
+                        "description": "File to write content into. Must contain valid path relative to the working directory",
+                        },
+                    "content": {
+                        "type": "string",
+                        "description": "content to be written to file defined in file_path"
+                    }
+                }
+            } 
+        }
+    }
+
+
+
 def write_file(working_directory: str, file_path: str, content: str) -> str:
 
     try:

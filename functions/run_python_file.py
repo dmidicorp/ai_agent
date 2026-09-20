@@ -2,6 +2,28 @@ import os
 import subprocess
 
 
+schema_run_python_file = {
+        "type": "function",
+        "function": {
+            "name": "run_python_file",
+            "description": "Executes a given python file provided in file_path, using the args as arguments",
+            "parameters": {
+                "required": ["file_path"],
+                "type": "object",
+                "file_path": {
+                    "type": "string",
+                    "description": "A valid python executable file, with a .py extension that should be executed with ars as its arguments passed into it",
+                    },
+                "args": {
+                    "type": "array",
+                    "items": "string",
+                    "description": "List of arguments passed into the python executable file by the function"
+                }
+            }
+        }
+    }
+
+
 def run_python_file(working_directory: str, file_path: str, args: list[str] | None = None) -> str:
 
     wd_path = os.path.normpath(os.path.abspath((working_directory)))
