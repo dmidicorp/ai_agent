@@ -7,5 +7,6 @@ The agent is capable of:
 - List file contents
 - Write to files
 - Run python scripts
+- Fix some bugs
 
 - DO NOT USE IN PRODUCTION AND ONLY USE IN SANDBOX ENVIRONMENTS
